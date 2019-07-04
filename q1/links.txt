@@ -1,0 +1,17 @@
+Alguns sites para ver o processo e escolher alguma matriz de quantização
+
+https://en.wikipedia.org/wiki/Quantization_(image_processing) 
+
+https://cs.stanford.edu/people/eroberts/courses/soco/projects/data-compression/lossy/jpeg/coeff.htm
+
+https://www.google.com/search?q=quantization+matrix+jpeg&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiCr5vw3pvjAhWI1lkKHc3xDwQQ_AUIECgB&biw=1920&bih=969
+
+https://www.google.com/search?biw=1920&bih=969&tbm=isch&sa=1&ei=Oi8eXYy9K6WO0gLZhIWIBw&q=jpeg+diagram&oq=jpeg+diagram&gs_l=img.3..0i19j0i8i30i19l3.3704.10192..10520...3.0..0.258.3127.0j6j9......0....1..gws-wiz-img.......0i67j0j0i10i67j0i5i10i30j0i10i24j0i10j0i10i19j0i30j0i5i30j0i8i30j0i8i10i30j0i8i10i30i19.kClMA3ty4uQ#imgrc=Q3-Qvbc_xrSjSM:
+
+https://www.mathworks.com/matlabcentral/fileexchange/15335-jpeg-encoder-decoder
+
+https://stackoverflow.com/questions/29215879/how-can-i-generalize-the-quantization-matrix-in-jpeg-compression
+
+http://www.owlnet.rice.edu/~elec539/Projects99/JAMK/proj1/
+
+https://www.mathworks.com/matlabcentral/fileexchange/4772-image-compression
