@@ -15,3 +15,9 @@ https://stackoverflow.com/questions/29215879/how-can-i-generalize-the-quantizati
 http://www.owlnet.rice.edu/~elec539/Projects99/JAMK/proj1/
 
 https://www.mathworks.com/matlabcentral/fileexchange/4772-image-compression
+
+http://conteudo.icmc.usp.br/pessoas/frasson/jpeg/jpeg.html
+
+http://www.lcs.poli.usp.br/~gstolfi/PPT/APTV0616.pdf
+
+http://www.inf.unioeste.br/~adair/PID/Notas%20Aula/Codificacao%20por%20Transformadas%20e%20Padrao%20JPEG.pdf
