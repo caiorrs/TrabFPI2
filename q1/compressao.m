@@ -1,7 +1,7 @@
    image = imread('cameraman.tif');
-   figure, imshow(in_image), title('Imagem original');
+   figure, imshow(image), title('Imagem original');
 
-    matriz_quant = [ 16 11 10 16 24 40 51 61; ...
+   matriz_quant = [ 16 11 10 16 24 40 51 61; ...
                      12 12 14 19 26 58 60 55; ...
                      14 13 16 24 40 57 69 56; ...
                      14 17 22 29 51 87 80 62; ...
@@ -10,6 +10,16 @@
                      49 64 78 87 103 121 120 101; ...
                      72 92 95 98 112 100 103 99;
                     ];
+    
+ 
+    quality = 90; % Valores aceitados: 0 > quality < 98
+        
+    if quality > 50
+        matriz_quant = round(matriz_quant.*(ones(8)*((100-quality)/50)));
+    elseif quality < 50
+        matriz_quant = round(matriz_quant.*(ones(8)*(50/quality)));
+    end
+    
 	[alt, larg] = size(image);
     alt_original = alt;
     larg_original = larg;
@@ -62,7 +72,7 @@
     %aplicação da dct nos blocos
     for n=1:num_blocos
         b = int16(blocos{n})-128;
-        b_DCT = dct(double(b));
+        b_DCT = dct2(double(b));
         blocos_DCT{n} = b_DCT;
     end
 
@@ -81,13 +91,13 @@
     
     %requantização dos blocos
     for n=1:num_blocos
-        b_requant = blocos_quant{n}.*matriz_quant;
+        b_requant = blocos_quant{n}.*double(matriz_quant);
         blocos_requant{n} = b_requant;
     end
     
     %aplicação da dct inversa
     for n=1:num_blocos
-        b_decod = idct(double(blocos_requant{n}));
+        b_decod = idct2(double(blocos_requant{n}));
         blocos_decod{n} = uint8(round(b_decod)+128);
     end
     
@@ -108,4 +118,10 @@
     end
     
     out_image = uint8(imagem_quantizada(1:alt_original,1:larg_original));
-    figure,imshow(out_image);
+    figure,imshow(out_image), title(['Imagem resultado, qualidade = ' num2str(quality)]);
+    
+    % salva as imagens
+    filename = sprintf('original.png');
+    imwrite(image, filename);
+    filename = sprintf('cameraman resultado qualidade-%i.jpg', quality);
+    imwrite(out_image, filename);
