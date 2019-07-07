@@ -1,5 +1,5 @@
-he = imread('coins.jpg');
-figure,imshow(he),title('imagem de patologia');
+he = uint8(imread('kobi.png'));
+figure,imshow(he);
 cform = makecform('srgb2lab');
 lab_he = applycform(he,cform);
 ab = double(lab_he(:,:,2:3));
@@ -20,7 +20,7 @@ for k=1:nColors
     figure,imshow(segmented_images{k}),title(txt);
 end
 
-he = imread('ballpool.jpg');
+he = imread('cap.jpg');
 figure,imshow(he),title('imagem de patologia');
 cform = makecform('srgb2lab');
 lab_he = applycform(he,cform);
@@ -28,7 +28,7 @@ ab = double(lab_he(:,:,2:3));
 nrows = size(ab,1);
 ncols = size(ab,2);
 ab = reshape(ab,nrows*ncols,2);
-nColors = 5;
+nColors = 2;
 [cluster_idx,cluster_center] = kmeans(ab,nColors,'distance','sqEuclidean','Replicates',3);
 pixel_labels = reshape(cluster_idx,nrows,ncols);
 figure,imshow(pixel_labels,[]),title('imagem rotulada pelo indice do agrupamento');
